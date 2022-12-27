@@ -1,17 +1,28 @@
 const BMICalculator = (height, weight) => {
-    let BMI = weight / height ** 2;
+    let getHeight = Math.pow(height / 100, 2);
+    let BMI = (weight / getHeight).toFixed(1);
+
+    console.log(BMI);
 
     if (BMI < 18.5) {
-        console.log("Your BMI falls within the underweight range");
+        return "Your BMI falls within the underweight range";
     } else if (BMI > 18.5 && BMI < 24.9) {
-        console.log("Your BMI falls within the normal or healthy weight range");
+        return "Your BMI falls within the normal or healthy weight range";
     } else if (BMI > 25 && BMI < 29.9) {
-        console.log("Your BMI falls within the overweight range");
+        return "Your BMI falls within the overweight range";
     } else {
-        console.log("Your BMI falls within the obese range");
+        return "Your BMI falls within the obese range";
     }
-
-    return BMI;
 };
 
-BMICalculator(60, 150);
+const testBMICalculator = () => {
+    const result = BMICalculator(175, 45);
+    const expect = "Your BMI falls within the underweight range";
+
+    console.log(
+        result == expect ? "The result match" : "The result does not match"
+    );
+};
+
+// console.log(BMICalculator(175, 45));
+testBMICalculator();
