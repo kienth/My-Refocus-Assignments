@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>This is a headline</h1>
+        <span class="data"> I am a span </span>
+        <div id="container">
+            <div class="data">First data</div>
+            <div class="data">Second data</div>
+            <div class="data">Third data</div>
+        </div>
+        <h1>Another heading</h1>
+        <br />
+        <div id="dynamic-container"></div>
+    </body>
+
+    <script>
+        const heading = document.querySelector("h1");
+        heading.innerText = "New headline";
+
+        // const container = document.getElementById("container");
+        // container.innerHTML = "<div> I am inside a div </div>";
+
+        const data = document.querySelectorAll("div.data");
+
+        const colorMap = { 0: "red", 1: "blue", 2: "purple" };
+
+        for (let i = 0; i < data.length; i++) {
+            // data[i].innerText = "We are all same";
+            data[i].style.color = colorMap[i];
+            // data[i].style.backgroundColor = "black";
+        }
+
+        const newDiv = document.createElement("div");
+        newDiv.innerText = "Am a div from create element!";
+        newDiv.style.color = "green";
+
+        const dynamicDiv = document.getElementById("dynamic-container");
+        dynamicDiv.appendChild(newDiv);
+
+        const second = document.querySelector("div.data:nth-child(2)");
+        const parent = document.querySelector("#container");
+        parent.removeChild(second);
+
+        // const data = document.getElementsByTagName("h1");
+        // for (let i = 0; i < data.length; i++) {
+        //     data[i].innerText = "New head using tag name";
+        // }
+    </script>
+</html>

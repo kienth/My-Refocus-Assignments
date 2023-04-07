@@ -1,0 +1,16 @@
+h1 {
+    color: red;
+    text-align: center;
+    font-family: "Times New Roman";
+}
+
+h2 {
+    color: blue;
+    text-align: right;
+    font-family: Arial;
+}
+
+p {
+    color: orange;
+    font-family: Impact;
+}

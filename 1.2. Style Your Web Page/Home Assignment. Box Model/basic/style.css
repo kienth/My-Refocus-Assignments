@@ -1,0 +1,15 @@
+.box {
+    border: 1px solid gray;
+    padding: 16px;
+    height: 400px;
+    width: 400px;
+}
+
+.title {
+    margin-bottom: 14px;
+}
+
+.paragraph {
+    color: red;
+    padding-right: 38px;
+}

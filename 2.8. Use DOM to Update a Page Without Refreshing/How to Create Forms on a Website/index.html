@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./index.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <form name="signup" id="signup-form">
+            <h1>Signup</h1>
+            <div class="form-control">
+                <div id="error-nameField" class="error"></div>
+                <div>
+                    <label>Name</label>
+                    <input type="text" name="nameField" />
+                </div>
+            </div>
+            <div class="form-control">
+                <div id="error-username" class="error"></div>
+                <div>
+                    <label>User Name</label>
+                    <input type="text" name="username" />
+                </div>
+            </div>
+            <div class="form-control">
+                <div id="error-email" class="error"></div>
+                <div>
+                    <label>Email</label>
+                    <input type="email" name="email" />
+                </div>
+            </div>
+            <div class="form-control">
+                <div id="error-password" class="error"></div>
+                <div>
+                    <label>Password</label>
+                    <input type="password" name="password" />
+                </div>
+            </div>
+            <div class="form-control">
+                <div id="error-retypePassword" class="error"></div>
+                <div>
+                    <label>Retype Password</label>
+                    <input type="password" name="retypePassword" />
+                </div>
+            </div>
+            <div class="form-control">
+                <div id="error-gender" class="error"></div>
+                <div>
+                    Gender
+                    <label>
+                        Male
+                        <input type="radio" name="gender" value="Male" />
+                    </label>
+                    <label>
+                        Female
+                        <input type="radio" name="gender" value="Female" />
+                    </label>
+                </div>
+            </div>
+            <div class="form-control">
+                <div>
+                    <label>Secret Question</label>
+                    <select name="secretQuestion">
+                        <option value="">-select one-</option>
+                        <option value="favoriteColor">
+                            What is your favorite color
+                        </option>
+                        <option value="favoriteNumber">
+                            What is your favorite number
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-control">
+                <div>
+                    <label>Answer</label>
+                    <input type="text" name="answer" />
+                </div>
+            </div>
+            <div class="form-control">
+                <div id="error-agree" class="error"></div>
+                <label>
+                    <input type="checkbox" name="agree" value="true" />
+                    Agree on terms
+                </label>
+            </div>
+            <div class="form-control">
+                <button type="submit" name="submitBtn">Submit</button>
+                <button type="reset" name="resetBtn">Reset</button>
+            </div>
+        </form>
+    </body>
+
+    <script type="text/javascript">
+        const form = document.forms.signup;
+        const nameField = form.nameField;
+        const username = form.username;
+        const email = form.email;
+        const password = form.password;
+        const retype = form.retypePassword;
+        const gender = form.gender;
+        const secretQuestion = form.secretQuestion;
+        const answer = form.answer;
+        const agree = form.agree;
+
+        answer.readOnly = true;
+
+        secretQuestion.addEventListener("change", function () {
+            answer.readOnly = secretQuestion.value === "";
+            if (!secretQuestion.value) {
+                answer.value = "";
+            }
+        });
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            if (!nameField.value) {
+                setError(nameField, "Name is required!");
+                return;
+            }
+            if (!username.value) {
+                setError(username, "Username is required!");
+                return;
+            }
+            if (!email.value) {
+                setError(email, "Email is required!");
+                return;
+            }
+            if (!password.value) {
+                setError(password, "Password is required!");
+                return;
+            }
+            if (password.value !== retype.value) {
+                setError(password, "Password is not equal!");
+                return;
+            }
+            if (!gender.value) {
+                setError(gender, "Gender is required!");
+                return;
+            }
+            if (!answer.value) {
+                setError(answer, "Answer is required!");
+                return;
+            }
+            if (!agree.checked) {
+                setError(agree, "Must agree terms!");
+                return;
+            }
+
+            console.log("Name:", nameField.value);
+            console.log("Username:", username.value);
+            console.log("Email:", email.value);
+            console.log("Password:", password.value);
+            console.log("Gender:", gender.value);
+            console.log("Secret Question:", secretQuestion.value);
+            console.log("Answer:", answer.value);
+            alert("You successfully signed up!");
+        });
+
+        function setError(field, errorMsg) {
+            field.style.borderColor = "red";
+            document.getElementById(`error-${field.name}`).innerText = errorMsg;
+        }
+    </script>
+</html>

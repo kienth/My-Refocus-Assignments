@@ -1,0 +1,22 @@
+form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: auto;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+.form-control > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.error {
+    display: flex;
+    flex-direction: row-reverse;
+    color: red;
+}

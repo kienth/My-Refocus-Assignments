@@ -1,0 +1,16 @@
+.box {
+    border: 1px solid gray;
+    padding: 16px;
+    height: 400px;
+    width: 400px;
+}
+
+.title {
+    margin: 10px 5px;
+    padding: 10px 13px 11px 12px;
+}
+
+.paragraph {
+    padding: 6px 0;
+    margin: 0 16px;
+}

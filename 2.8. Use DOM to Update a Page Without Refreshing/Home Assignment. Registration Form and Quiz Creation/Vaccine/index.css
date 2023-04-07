@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+}
+
+form {
+    width: 50%;
+    margin: auto;
+}
+
+h3 {
+    text-align: center;
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+select:focus,
+input[type="password"]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+#signup-form {
+    padding: 16px;
+    background-color: white;
+}
+
+#submitBtn {
+    background-color: #04aa6d;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+#submitBtn:hover {
+    opacity: 1;
+}
+
+.form-control {
+    margin-bottom: 20px;
+}
+
+.form-control > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.error {
+    display: flex;
+    flex-direction: row-reverse;
+    color: red;
+    font-style: italic;
+    font-size: small;
+    font-weight: bold;
+}

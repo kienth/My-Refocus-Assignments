@@ -1,0 +1,24 @@
+#addToCart {
+    margin-top: 10px;
+}
+
+.card {
+    border: 1px solid gray;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.count-button {
+    display: flex;
+    margin-top: 10px;
+    gap: 5px;
+}
+
+.count-button > button {
+    display: flex;
+    flex-grow: 1;
+    text-align: center;
+    justify-content: center;
+}

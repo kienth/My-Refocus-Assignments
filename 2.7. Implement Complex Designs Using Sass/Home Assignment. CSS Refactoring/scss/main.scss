@@ -1,0 +1,65 @@
+@use "mixins";
+@use "variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: repeat(3, 1fr);
+    gap: 50px;
+    place-items: center;
+}
+
+.triangle-left {
+    @include mixins.triangle(
+        $top: variables.$triangle-default-side,
+        $bottom: variables.$triangle-default-side,
+        $right: 100px solid blue
+    );
+}
+
+.triangle-up {
+    @include mixins.triangle(
+        $left: variables.$triangle-default-side,
+        $right: variables.$triangle-default-side,
+        $bottom: 100px solid orange
+    );
+}
+
+.triangle-down {
+    @include mixins.triangle(
+        $left: variables.$triangle-default-side,
+        $right: variables.$triangle-default-side,
+        $top: 100px solid red
+    );
+}
+
+.triangle-right {
+    @include mixins.triangle(
+        $top: variables.$triangle-default-side,
+        $bottom: variables.$triangle-default-side,
+        $left: 100px solid green
+    );
+}
+
+.ellipse-horizontal {
+    @include mixins.ellipse($type: "horizontal");
+}
+
+.ellipse-vertical {
+    @include mixins.ellipse($type: "vertical");
+}
+
+.rectangle-horizontal {
+    @include mixins.rectangle($type: "horizontal");
+}
+
+.rectangle-vertical {
+    @include mixins.rectangle($type: "vertical");
+}

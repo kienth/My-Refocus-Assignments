@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Simple Quiz</h1>
+
+        <form name="quiz" id="quiz-form">
+            <div class="form-control">
+                <div>
+                    Question 1: What is the capital of the Philippines? <br />
+                    <input type="text" name="question1" />
+                    <div id="result-question1"></div>
+                    <br /><br />
+                </div>
+            </div>
+            <div class="form-control">
+                <div style="display: flex; flex-direction: column">
+                    Question 2: What is the value of x? x = 3 + 2*5<br />
+                    <label>
+                        <input type="radio" name="question2" value="25" />
+                        x = 25
+                    </label>
+                    <label>
+                        <input type="radio" name="question2" value="13" />
+                        x = 13
+                    </label>
+                    <label>
+                        <input type="radio" name="question2" value="28" />
+                        x = 28
+                    </label>
+                    <div id="result-question2"></div>
+                    <br /><br />
+                </div>
+            </div>
+            <div class="form-control">
+                <div style="display: flex; flex-direction: column">
+                    Question 3: Which of the following birds can fly? Choose 3
+                    correct answers.<br />
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="question3"
+                            value="parrot"
+                        />
+                        parrot
+                    </label>
+                    <label>
+                        <input type="checkbox" name="question3" value="eagle" />
+                        eagle
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="question3"
+                            value="penguin"
+                        />
+                        penguin
+                    </label>
+                    <label>
+                        <input type="checkbox" name="question3" value="crow" />
+                        crow
+                    </label>
+                    <div id="result-question3"></div>
+                    <br /><br />
+                </div>
+            </div>
+            <div class="form-control">
+                <button type="submit" name="submitBtn">Submit</button>
+                <button type="reset" name="resetBtn">Reset</button>
+            </div>
+        </form>
+
+        <script type="text/javascript">
+            const form = document.forms.quiz;
+            const question1 = form.question1;
+            const question2 = form.question2;
+            const question3 = form.question3;
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                checkQuestion1();
+                checkQuestion2();
+                checkQuestion3();
+            });
+
+            form.addEventListener("reset", function (event) {
+                event.preventDefault();
+                document.getElementById("result-question1").innerText = "";
+                document.getElementById("result-question2").innerText = "";
+                document.getElementById("result-question3").innerText = "";
+
+                question1.value = "";
+                question2.forEach((item) => {
+                    item.checked = false;
+                });
+                question3.forEach((item) => {
+                    item.checked = false;
+                });
+            });
+
+            function checkQuestion1() {
+                if (!question1.value) {
+                    setReturnMsg(question1, "You must enter an answer!");
+                } else {
+                    if (question1.value !== "Manila") {
+                        setReturnMsg(
+                            question1,
+                            "Question 1 answer is incorrect!"
+                        );
+                    } else {
+                        setReturnMsg(
+                            question1,
+                            "Question 1 answer is correct!",
+                            "success"
+                        );
+                    }
+                }
+            }
+
+            function checkQuestion2() {
+                // Assume all names are the same. That is why I added index zero to question2
+                if (!question2.value) {
+                    setReturnMsg(question2[0], "You must enter an answer!");
+                } else {
+                    if (Number(question2.value) === 3 + 2 * 5) {
+                        setReturnMsg(
+                            question2[0],
+                            "Question 2 answer is correct!",
+                            "success"
+                        );
+                    } else {
+                        setReturnMsg(
+                            question2[0],
+                            "Question 2 answer is incorrect!"
+                        );
+                    }
+                }
+            }
+
+            function checkQuestion3() {
+                // Assume all names are the same. That is why I added index zero to question3
+                let answerList = ["parrot", "eagle", "crow"];
+                let getAnswer = [];
+                question3.forEach((item) => {
+                    if (item.checked) {
+                        getAnswer.push(item.value);
+                    }
+                });
+
+                if (getAnswer.length === 0) {
+                    setReturnMsg(question3[0], "You must enter an answer!");
+                } else {
+                    if (getAnswer.length === answerList.length) {
+                        if (
+                            getAnswer.every((elem) => answerList.includes(elem))
+                        ) {
+                            setReturnMsg(
+                                question3[0],
+                                "Question 3 answer is correct!",
+                                "success"
+                            );
+                        } else {
+                            setReturnMsg(
+                                question3[0],
+                                "Question 3 answer is incorrect!"
+                            );
+                        }
+                    } else {
+                        setReturnMsg(
+                            question3[0],
+                            "Question 3 answer is incorrect!"
+                        );
+                    }
+                }
+            }
+
+            function setReturnMsg(field, msg, type) {
+                const returnField = document.getElementById(
+                    `result-${field.name}`
+                );
+                returnField.innerText = msg;
+                returnField.style.color = type === "success" ? "green" : "red";
+            }
+        </script>
+    </body>
+</html>

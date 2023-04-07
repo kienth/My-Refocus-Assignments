@@ -1,0 +1,29 @@
+@mixin triangle($top: "", $bottom: "", $left: "", $right: "") {
+    width: 0;
+    height: 0;
+    border-top: $top;
+    border-bottom: $bottom;
+    border-right: $right;
+    border-left: $left;
+}
+
+@mixin ellipse($type) {
+    @if $type == "horizontal" {
+        width: 180px;
+        height: 90px;
+    } @else if $type == "vertical" {
+        width: 90px;
+        height: 180px;
+    }
+    border-radius: 50%;
+}
+
+@mixin rectangle($type) {
+    @if $type == "horizontal" {
+        width: 120px;
+        height: 80px;
+    } @else if $type == "vertical" {
+        width: 80px;
+        height: 120px;
+    }
+}
