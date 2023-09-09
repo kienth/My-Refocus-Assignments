@@ -1,0 +1,106 @@
+.app-bar {
+    color: blue; /* Replace with your desired text color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo {
+    font-size: 18px;
+    margin-right: 16px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.tabs {
+    display: flex;
+}
+
+.tab {
+    text-decoration: none;
+    color: blue; /* Replace with your desired tab text color */
+    padding: 8px 16px;
+}
+
+.tab:hover {
+    background-color: #0000ff69; /* Replace with your desired tab hover background color */
+    color: white;
+    border-radius: 5px;
+}
+
+.active {
+    background-color: blue; /* Replace with your desired tab hover background color */
+    color: white;
+    border-radius: 5px;
+}
+
+.project-header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 15px;
+}
+
+.card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card .img {
+    width: 100%;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+    font-size: 24px;
+    background-color: #ebeff8;
+    color: #c3c2d1;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-label {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #666;
+}
+
+.breadcrumbs {
+    background-color: #f0f0f0;
+    padding: 8px;
+}
+
+.breadcrumbs ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumbs li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+    content: "/";
+    margin-left: 5px;
+    color: #999;
+}
+
+.breadcrumbs a {
+    color: #333;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}

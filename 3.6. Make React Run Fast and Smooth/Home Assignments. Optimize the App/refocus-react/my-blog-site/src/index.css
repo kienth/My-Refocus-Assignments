@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+/* App Bar styles */
+.app-bar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 25px;
+}
+
+/* Main content styles */
+.content {
+    padding: 20px;
+    margin: 1% auto;
+    background-color: #f2f2f2;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #3333338c;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Optional: Add some additional styling */
+.content p {
+    line-height: 1.5;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    text-align: center;
+}
+
+input {
+    width: 20%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+select {
+    width: 20%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.primary {
+    background-color: rgb(0, 123, 255);
+}
+
+.success {
+    background-color: rgb(40, 167, 69);
+}
+
+.danger {
+    background-color: rgb(220, 53, 69);
+}
+
+button {
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Adjust gap as needed */
+}
+
+.col-6 {
+    grid-column: span 1; /* Each column spans 1 grid track */
+}
+
+/* Optional: Add some styles for demonstration purposes */
+.col-6 {
+    background-color: #f2f2f2;
+    padding: 10px;
+    width: -webkit-fill-available;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Ensure the overlay appears on top of other content */
+}
+
+/* Pop-up container styles */
+.popup {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    max-height: 80vh; /* Set a maximum height if needed */
+    overflow-y: auto; /* Enable scrolling if the content exceeds the container height */
+}
+
+/* Optional: Add some additional styling */
+.popup h2 {
+    margin-top: 0;
+}

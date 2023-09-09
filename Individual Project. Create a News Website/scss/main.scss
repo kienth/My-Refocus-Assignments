@@ -1,0 +1,170 @@
+@use "variables";
+* {
+    font-family: "Inter";
+    font-style: normal;
+}
+body {
+    margin: 0;
+    // width: 1200px;
+    // height: 1097px;
+}
+button {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 20px;
+    gap: 5px;
+
+    width: 86px;
+    height: 48px;
+
+    border: 1px solid #0266ff;
+    border-radius: 40px;
+    color: variables.$color-9;
+    background-color: transparent;
+}
+#header {
+    height: 84px;
+    display: flex;
+    justify-content: space-between;
+    background: #192140;
+    padding: variables.$main-padding;
+    color: variables.$color-1;
+    #logo {
+        left: 6.67%;
+        right: 84.19%;
+        top: 34.52%;
+        bottom: 34.52%;
+        color: variables.$color-8;
+    }
+    .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0px;
+        gap: 60px;
+        div:nth-child(1) {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 30px;
+
+            p:nth-child(1) {
+                text-decoration-line: underline;
+                color: variables.$color-8;
+            }
+        }
+        div:nth-child(2) {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0px;
+            gap: 20px;
+            color: variables.$color-4;
+        }
+    }
+}
+#main-body {
+    background: variables.$color-1;
+    padding: 60px 80px;
+    .card {
+        width: 320px;
+        height: 300px;
+        border-radius: 6px;
+        background: url(../images/Image-8.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+    .card:nth-child(1) {
+        border-radius: 6px;
+        background: linear-gradient(
+                180deg,
+                #192140 0%,
+                rgba(25, 33, 64, 0) 70.8%
+            ),
+            url(../images/Image-8.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        zoom: 1;
+
+        .close {
+            text-align: center;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #9d9db5;
+            color: #9d9db5;
+            border-radius: 10000px;
+            position: relative;
+            left: 89.06%;
+            top: -25%;
+        }
+    }
+
+    .card-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+        gap: 20px;
+        background: #f8f9fc;
+        border-radius: 0px 0px 6px 6px;
+        .icon {
+            text-align: center;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #192140;
+            border-radius: 10000px;
+        }
+        .title {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 130%;
+            letter-spacing: -0.02em;
+            color: #10131c;
+        }
+
+        .element {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 10px;
+            height: 34px;
+        }
+        .line {
+            width: 280px;
+            height: 0px;
+            border: 0.5px solid #9d9db5;
+        }
+        .info {
+            display: flex;
+            justify-content: space-between;
+            width: 280px;
+            height: 24px;
+
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 130%;
+            color: #9d9db5;
+            .date {
+                box-sizing: border-box;
+                padding: 4px 10px;
+                border: 1px solid #c0bfcf;
+                border-radius: 40px;
+            }
+            .favorite {
+                display: flex;
+                align-items: center;
+                gap: 2px;
+                letter-spacing: -0.03em;
+            }
+        }
+    }
+}
